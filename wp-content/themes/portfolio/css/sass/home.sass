@@ -1,0 +1,220 @@
+body.home
+  header
+    position: relative
+    background-size: cover
+    background-position: center
+    width: 100%
+    height: calc(100vh - 180px)
+    min-height: 500px
+    max-height: 700px
+    padding-top: 180px
+    @media only screen and (max-width: 767px)
+      padding-top: 50px
+    > div
+      position: relative
+      z-index: 11
+
+    svg#svg-wave
+      position: absolute
+      bottom: -2px
+      left: 0
+      width: 100%
+      height: 120px
+      z-index: 10
+      path
+        stroke: none
+        fill: $white
+
+    a#to-scroll
+      position: absolute
+      bottom: 55px
+      left: calc(50% - 15px)
+      width: 30px
+      height: 60px
+      border: 2px solid #fff
+      border-radius: .8rem
+      z-index: 11
+      font-size: 0
+      mix-blend-mode: difference
+      &::after
+        content: ''
+        position: absolute
+        top: 30%
+        left: calc(50% - 2px)
+        width: 4px
+        height: 10px
+        border-radius: .5rem
+        background-color: #fff
+        mix-blend-mode: difference
+        @include animation(4s linear 2s infinite callToScroll)
+
+    #header-title
+      p
+        > strong
+          color: $white
+          font-size: 1.3rem
+          background: linear-gradient(to top, rgba($principal, 0.8) 0%, rgba($principal, 0.8) 65%, transparent 65.01%) no-repeat
+          background-size: 100% 100%
+          padding: 0 5px
+          font-family: 'Catamaran', sans-serif
+          text-shadow: 1px 1px 2px $black
+
+    #header-image
+      position: relative
+      img
+        margin-left: 20px
+        width: calc(100% - 20px)
+      #header-square
+        position: absolute
+        bottom: 20%
+        left: 0
+        width: calc(100% + 100vw)
+        height: 60%
+        background-color: rgba($principal, .8)
+        @include transform(skewX(-10deg))
+
+@-webkit-keyframes callToScroll
+  0%
+    top: 30%
+
+  5%
+    top: 45%
+
+  10%
+    top: 30%
+
+  15%
+    top: 45%
+
+  20%
+    top: 30%
+@keyframes callToScroll
+    0%
+      top: 30%
+
+    5%
+      top: 45%
+
+    10%
+      top: 30%
+
+    15%
+      top: 45%
+
+    20%
+      top: 30%
+
+#contactez-moi
+  form
+    background-color: $dark-grey
+    color: $white
+    padding: 10px 20px
+    .form-group
+      position: relative
+      margin: 25px 0
+      label
+        position: absolute
+        top: 5px
+        left: 2px
+        padding: 0 5px
+        background-color: transparent
+        @include transition(.3s ease)
+        &.focus
+          top: -8px
+          left: 5px
+          font-size: .8rem
+          color: $grey
+          background-color: $dark-grey
+      input[type="text"], input[type="email"], textarea
+        padding: 5px
+        color: $white
+        border: none
+        border: 1px solid $grey
+        @include transition(.3s ease border)
+        background-color: transparent
+        width: calc(100% - 10px)
+        line-height: 1.4rem
+        outline: none
+        &:hover, &:focus
+          border-color: $white
+      textarea
+        resize: vertical
+        height: 80px
+        min-height: 50px
+        max-height: 300px
+    .wpcf7-list-item
+      margin-left: 0
+    .wpcf7-not-valid-tip
+      margin-top: 5px
+      font-weight: bold
+    .wpcf7-response-output
+      border-color: $white
+      font-weight: bold
+    input[type="submit"]
+      border-color: $white
+      color: $white
+      cursor: pointer
+      margin-top: 0
+      &:hover
+        background-color: $white
+        color: $black
+    input[type="checkbox"]
+      display: none
+      + span
+        display: block
+        position: relative
+        padding-left: 35px
+        margin-bottom: 20px
+        // font: 14px/20px 'Open Sans', Arial, sans-serif
+        color: #ddd
+        cursor: pointer
+        -webkit-user-select: none
+        -moz-user-select: none
+        -ms-user-select: none
+        &:last-child
+          margin-bottom: 0
+        &:before
+          content: ''
+          display: block
+          width: 20px
+          height: 20px
+          position: absolute
+          border: 1px solid $white
+          left: 0
+          top: 0
+          @include transition(all .12s)
+
+      &:checked
+        + span
+          &:before
+            width: 10px
+            top: -5px
+            left: 5px
+            border-radius: 0
+            opacity: 1
+            border: 1px solid $green
+            border-top-color: transparent
+            border-left-color: transparent
+            @include transform(rotate(45deg))
+
+ul#list-socials
+  margin-top: 40px
+  li
+    a
+      font-size: 0
+      width: 30px
+      height: 30px
+      display: block
+      background-size: contain
+      background-position: center
+      @include transition(.3s ease)
+      &.picto-facebook
+        background-image: url(./img/facebook.png)
+      &.picto-linkedin
+        background-image: url(./img/linkedin.png)
+      &.picto-mail
+        background-image: url(./img/mail.png)
+      &.picto-github
+        background-image: url(./img/github.png)
+      &:hover
+        @include filter(grayscale(100%))

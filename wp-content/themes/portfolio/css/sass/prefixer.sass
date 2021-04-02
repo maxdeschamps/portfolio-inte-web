@@ -1,0 +1,89 @@
+@mixin display-flex
+  display: -webkit-box
+  display: -ms-flexbox
+  display: flex
+
+@mixin flex-row
+  -webkit-box-orient: horizontal
+  -webkit-box-direction: normal
+  -ms-flex-direction: row
+  flex-direction: row
+
+@mixin flex-row-reverse
+  -webkit-box-orient: horizontal
+  -webkit-box-direction: reverse
+  -ms-flex-direction: row-reverse
+  flex-direction: row-reverse
+
+@mixin flex-column
+  -webkit-box-orient: vertical
+  -webkit-box-direction: normal
+  -ms-flex-direction: column
+  flex-direction: column
+
+@mixin flex-column-reverse
+  -webkit-box-orient: vertical
+  -webkit-box-direction: reverse
+  -ms-flex-direction: column-reverse
+  flex-direction: column-reverse
+
+@mixin flex-align-start
+  -webkit-box-align: start
+  -ms-flex-align: start
+  align-items: flex-start
+
+@mixin flex-align-center
+  -webkit-box-align: center
+  -ms-flex-align: center
+  align-items: center
+
+@mixin flex-align-end
+  -webkit-box-align: end
+  -ms-flex-align: end
+  align-items: flex-end
+
+@mixin flex-justify-around
+  -ms-flex-pack: distribute
+  justify-content: space-around
+
+@mixin flex-justify-between
+  -webkit-box-pack: justify
+  -ms-flex-pack: justify
+  justify-content: space-between
+
+@mixin flex-justify-end
+  -webkit-box-pack: end
+  -ms-flex-pack: end
+  justify-content: flex-end
+  justify-content: space-between
+
+@mixin flex-wrap
+  -ms-flex-wrap: wrap
+  flex-wrap: wrap
+
+@mixin flex($i)
+  -webkit-box-flex: $i
+  -ms-flex: $i
+  flex: $i
+
+@mixin transition($i)
+  -webkit-transition: $i
+  -o-transition: $i
+  transition: $i
+
+@mixin transform($i)
+  -webkit-transform: $i
+  -ms-transform: $i
+  transform: $i
+
+@mixin filter($i)
+  -webkit-filter: $i
+  filter: $i
+
+@mixin box-shadow($i)
+  -webkit-box-shadow: $i
+  box-shadow: $i
+
+@mixin animation($i)
+  -webkit-animation: $i
+  animation: $i

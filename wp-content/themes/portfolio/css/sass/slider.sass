@@ -1,0 +1,40 @@
+#liste-projets
+  margin-top: 40px
+  figure.item
+    position: relative
+    font-size: 0
+    img
+      @include transition(.3s ease)
+    figcaption
+      position: relative
+      @include display-flex
+      > div
+        margin: auto
+        p
+          position: relative
+          background: linear-gradient(to top, $principal 0%, $principal 55%, transparent 55.01%) no-repeat
+          background-size: 100% 100%
+          padding: 0 5px
+          color: $black
+          font-size: 1.3rem
+          display: inline
+          font-family: 'Catamaran', sans-serif
+
+    @media only screen and (min-width: 768px)
+      figcaption
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        background-color: rgba($black, .7)
+        opacity: 0
+        @include transition(.3s ease)
+        > div
+          p
+            color: $white
+      &:hover
+        img
+          @include filter(grayscale(1))
+        figcaption
+          opacity: 1

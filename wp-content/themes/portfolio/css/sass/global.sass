@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@800&family=Fira+Sans:wght@300;600&family=Playfair+Display&display=swap')
+
+*, body, p, a, li, b, strong, button, label, input
+  font-family: 'Fira Sans', sans-serif
+
+h1
+  font-family: 'Playfair Display', serif
+
+h2, h3, h4, h5, h6
+  font-family: 'Catamaran', sans-serif
+
+p, a, b
+  font-size: 1rem
+  text-decoration: none
+  line-height: 1.4rem
+
+a
+  cursor: pointer
+
+h1
+  background: linear-gradient(to top, rgba($principal, 0.8) 0%, rgba($principal, 0.8) 55%, transparent 55.01%) no-repeat
+  background-size: 100% 100%
+  text-shadow: 1px 1px 2px $black
+  color: $white
+  font-size: 2.8rem
+  @media only screen and (max-width: 767px)
+    font-size: 2.2rem
+
+h2
+  background: linear-gradient(to top, rgba($principal, 0.8) 0%, rgba($principal, 0.8) 55%, transparent 55.01%) no-repeat
+  background-size: 100% 100%
+  position: relative
+  display: inline-block
+  padding: 0 30px
+  font-size: 1.8rem
+  @media only screen and (max-width: 767px)
+    font-size: 1.6rem
+  &:before
+    content: '<'
+    left: 5px
+  &:after
+    content: '/>'
+    right: 5px
+  &:after, &:before
+    position: absolute
+    top: calc(50% - 1.1rem)
+    font-size: 1.3rem
+    font-family: 'Catamaran', sans-serif
+
+html
+  scroll-behavior: smooth
+
+body
+  margin: 0
+  padding: 0
+  overflow-x: hidden
+
+section
+  padding: 0
+  padding-top: 80px
+
+ul
+  list-style-type: none
+  margin: 0
+  padding: 0
+  > li
+    list-style-type: none
+
+img
+  width: 100%
+  font-size: 0
+  margin: 0
+  padding: 0
+  &.reverse
+    @include transform(scaleX(-1))
+
+@for $i from 1 through 12
+  .col-#{$i}
+    width: calc(100% / (12 / #{$i}) - 10px)
+    margin: 0 5px
+
+@media only screen and (min-width: 768px)
+  @for $i from 1 through 12
+    .col-md-#{$i}
+      width: calc(100% / (12 / #{$i}) - 10px)
+      margin: 0 5px
+
+.container
+  width: 95%
+  max-width: 1080px
+  margin: 0 auto
+
+.flex
+  @include display-flex
+  @include flex-row
+  @include flex-align-start
+  &.row-reverse
+    @include flex-row-reverse
+  &.column
+    @include flex-column
+  &.column-reverse
+    @include flex-column-reverse
+  &.space-around
+    @include flex-justify-around
+  &.space-between
+    @include flex-justify-between
+  &.justify-end
+    @include flex-justify-end
+  &.align-end
+    @include flex-align-end
+  &.align-center
+    @include flex-align-center
+  &.flex-wrap
+    @include flex-wrap
+
+
+@media only screen and (max-width: 767px)
+  .flex
+    &.column-sm
+      @include flex-column
+    &.column-reverse-sm
+      @include flex-column-reverse
+
+.btn
+  position: relative
+  margin-top: 30px
+  padding: 5px 30px
+  border: 3px solid $principal
+  background-color: transparent
+  color: $principal
+  @include transition(.3s ease)
+  &:after
+    content: '>'
+    position: absolute
+    right: 0
+    top: calc(50% - .8rem)
+    font-family: 'Catamaran', sans-serif
+    font-size: 1.3rem
+    color: $white
+    opacity: 0
+    @include transition(.3s ease)
+  &:hover
+    background-color: $principal
+    color: $white
+    &:after
+      opacity: 1
+      right: 10px
+
+.cadre
+  position: relative
+  &:before
+    content: ''
+    position: absolute
+    top: 15px
+    left: -15px
+    background-color: $principal
+    width: 100%
+    height: 100%
+
+.text-center
+  text-align: center
+
+.margin-auto
+  margin: 0 auto
+
+.swiper-button-next, .swiper-button-prev
+  color: $principal
+
+@media only screen and (max-width: 767px)
+  .margin-bottom-sm
+    margin-bottom: 40px

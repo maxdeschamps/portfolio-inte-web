@@ -1,0 +1,18 @@
+article
+  header
+    position: relative
+    background-size: cover
+    background-position: center
+    width: 100%
+    height: 150px
+    padding-top: 180px
+
+  section.content
+    a:not(.btn)
+      color: $black
+      font-weight: bold
+      background: linear-gradient(to top, rgba($principal, 0.8) 0%, rgba($principal, 0.8) 55%, transparent 55.1%) no-repeat
+      background-size: 100% 200%
+      @include transition(.3s ease)
+      &:hover
+        background-size: 100% 100%
