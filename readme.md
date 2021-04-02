@@ -1,3 +1,3 @@
 
 # Portfolio - Maxence Deschamps
-## Exercice d'intégration webavec WordPress
+## Exercice d'intégration web avec WordPress
